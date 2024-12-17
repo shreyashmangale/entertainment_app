@@ -4,7 +4,7 @@ const { client } = require("../dbConnection");
 
 const getSearchedData = async (req, res) => {
     const searched_name = req.query.searchedName;
-    console.log(searched_name);
+  //console.log(searched_name);
 
     try {
         await client.connect();
@@ -14,7 +14,7 @@ const getSearchedData = async (req, res) => {
 
         // Insert a single document
         const result = await collection.find({ title: { $regex: searched_name, $options: "i" } }).toArray();
-        console.log(result[0]);
+      //console.log(result[0]);
 
         //console.log('Document fetched:', result);
         return res.status(200).json(result);

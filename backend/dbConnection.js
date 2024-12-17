@@ -1,23 +1,3 @@
-// const { default: mongoose } = require('mongoose');
-// const { MongoClient } = require('mongodb');
-// const dotenv = require('dotenv').config();
-
-
-// mongoose.connect(process.env.MONGODB_CONNECTION, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-// })
-//     .then(() => console.log('Connected to MongoDB'))
-//     .catch((error) => console.error('Error connecting to MongoDB:', error));
-
-
-// const uri = process.env.MONGODB_CONNECTION;
-// const client = new MongoClient(uri);
-
-// module.exports = client 
-
-
-
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const dotenv = require('dotenv').config();
 
@@ -37,7 +17,7 @@ async function connectDB() {
     // Connect the client to the server
     if (!client.isConnected) {
         await client.connect();
-        console.log("Connected to MongoDB Atlas entertainment");
+      // console.log("Connected to MongoDB Atlas");
     }
     return client; // Return the connected client
   } catch (error) {

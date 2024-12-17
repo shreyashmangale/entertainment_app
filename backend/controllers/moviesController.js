@@ -18,10 +18,10 @@ const getMovies = async (req, res) => {
     }
 }
 const getMovie = async (req, res) => {
-    console.log("in getMovie single");
+  //console.log("in getMovie single");
     
     const id = req.params.id;
-    console.log("id is : ", Number(id));
+  //console.log("id is : ", Number(id));
     
     try {
         await client.connect();
@@ -31,7 +31,7 @@ const getMovie = async (req, res) => {
 
         // Insert a single document
         const result = await collection.find({_id: Number(id)}).toArray();
-        console.log(result);
+      //console.log(result);
         
         //console.log('Document fetched:', result);
         return res.status(200).json(result[0]);

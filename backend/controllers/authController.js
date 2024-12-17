@@ -30,16 +30,16 @@ const register = async (req, res) => {
         // Insert a single document
         if (await collection.findOne({ email: email })) {
             res.status(409).json("User already exists!!!!");
-            console.log("User exists already....");
+          //console.log("User exists already....");
 
         } else {
 
             const result = await collection.insertOne(data);
             res.status(200).json("Successfully created user")
-            console.log("Succesfully created user...", result);
+          //console.log("Succesfully created user...", result);
         }
     } catch (err) {
-        console.log("Already exists user");
+      //console.log("Already exists user");
 
         res.status(409).json("Already exists user")
 
@@ -60,12 +60,12 @@ const login = async (req, res) => {
 
         const data = await collection.findOne({ email: email })
         if (data) {
-            console.log("User present....");
-            console.log(data);
+          //console.log("User present....");
+          //console.log(data);
 
-            console.log(".........................");
+          //console.log(".........................");
             const isPassCorrect = bcrypt.compareSync(req.body.password, data.password);
-            console.log(isPassCorrect);
+          //console.log(isPassCorrect);
 
 
 
@@ -73,7 +73,7 @@ const login = async (req, res) => {
 
             const token = jwt.sign({ id: data._id }, "jwtkey");
             const { password, ...userData } = (data)
-            console.log(token);
+          //console.log(token);
 
             return res.status(200).json({
                 userData,
@@ -82,7 +82,7 @@ const login = async (req, res) => {
             
         }
         else {
-            console.log("Not matching");
+          //console.log("Invalid credentials");
 
         }
     } catch (err) {

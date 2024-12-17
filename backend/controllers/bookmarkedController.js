@@ -7,11 +7,11 @@ const { ObjectId } = mongoose.Types; // Import ObjectId for type conversion
 const insertData = async (req, res) => {
     const token = req.headers['authorization']?.split(' ')[1]; // Extract token from Authorization header
     // const token = req.cookies.access_token; // Extract token from cookies
-    console.log("in insert to bookmarked ", token)
+  //console.log("in insert to bookmarked ", token)
 
     try {
         const data = req.body;
-        console.log(data);
+      //console.log(data);
 
         await client.connect();
         const db = client.db('entertainment_db');  // Select the database
@@ -33,14 +33,14 @@ const insertData = async (req, res) => {
         if (result.modifiedCount) {
 
             res.status(201).json("Successfully added to bookmarked");
-            console.log("Succesfully added to bookmarked", result);
+          //console.log("Succesfully added to bookmarked", result);
         } else {
             res.status(409).json("Already added to bookmarked")
-            console.log("Already added to bookmarked", result);
+          //console.log("Already added to bookmarked", result);
 
         }
     } catch (err) {
-        console.log("Already added to bookmarked", err);
+      //console.log("Already added to bookmarked", err);
 
 
     }
@@ -48,7 +48,7 @@ const insertData = async (req, res) => {
 const getData = async (req, res) => {
     const token = req.headers['authorization']?.split(' ')[1]; // Extract token from Authorization header
     // const token = req.cookies.access_token; // Extract token from cookies
-    console.log("in get bookmarked ", token)
+  //console.log("in get bookmarked ", token)
 
     try {
         if (!token) {
@@ -61,7 +61,7 @@ const getData = async (req, res) => {
             }
 
             // console.log("In get data", token);
-            console.log("In get data user", user.id);
+          //console.log("In get data user", user.id);
 
             await client.connect();
             const db = client.db('entertainment_db');  // Select the database
@@ -71,8 +71,8 @@ const getData = async (req, res) => {
             const userId = new ObjectId(user.id);
 
             const userData = await usersCollection.find({ _id: userId }).toArray();
-            console.log("userData", userData)
-            console.log("userData email", userData[0].email)
+          //console.log("userData", userData)
+          //console.log("userData email", userData[0].email)
 
             // Insert a single document
             const result = await collection.find(
@@ -92,10 +92,10 @@ const deleteData = async (req, res) => {
 
     const token = req.headers['authorization']?.split(' ')[1]; // Extract token from Authorization header
     // const token = req.cookies.access_token; // Extract token from cookies
-    console.log("in delete from bookmarked ", token)
+  //console.log("in delete from bookmarked ", token)
 
     const id = req.params.id;
-    console.log(Number(id));
+  //console.log(Number(id));
 
     if (!token) {
         return res.status(401).send('Access Denied');
@@ -109,7 +109,7 @@ const deleteData = async (req, res) => {
             }
 
             // console.log("In get data", token);
-            console.log("In delete data user", user.id);
+          //console.log("In delete data user", user.id);
             await client.connect();
             const db = client.db('entertainment_db');  // Select the database
             const collection = db.collection('bookmarked');  // Select the collection
@@ -119,14 +119,14 @@ const deleteData = async (req, res) => {
             const userId = new ObjectId(user.id);
 
             const userData = await usersCollection.find({ _id: userId }).toArray();
-            console.log("userData", userData)
-            console.log("userData in delete email", userData[0].email)
+          //console.log("userData", userData)
+          //console.log("userData in delete email", userData[0].email)
 
             const bData = await collection.find(
                 { userEmail: userData[0].email },
                 { bookmarkedItems: 1, _id: 1 } // Include bookmarkedItems, exclude MongoDB's _id
             ).toArray();
-            console.log("bData", bData)
+          //console.log("bData", bData)
 
 
             const result = await collection.updateOne(
@@ -135,7 +135,7 @@ const deleteData = async (req, res) => {
             );
 
             // const result = await collection.deleteOne({ _id: Number(id) });
-            console.log('Document deleted:', result);
+          //console.log('Document deleted:', result);
             return res.status(200).json(result);
         });
     } catch (error) {

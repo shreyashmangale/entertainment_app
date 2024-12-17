@@ -16,10 +16,10 @@ const getTvseriesAll = async (req, res) => {
     }
 }
 const getTvseriesSingle = async (req, res) => {
-    console.log("in getTvseriesSingle ");
+  //console.log("in getTvseriesSingle ");
     
     const id = req.params.id;
-    console.log("id is : ", Number(id));
+  //console.log("id is : ", Number(id));
     
     try {
         await client.connect();
@@ -29,7 +29,7 @@ const getTvseriesSingle = async (req, res) => {
 
         // Insert a single document
         const result = await collection.find({_id: Number(id)}).toArray();
-        console.log(result[0]);
+      //console.log(result[0]);
         
         //console.log('Document fetched:', result);
         return res.status(200).json(result[0]);
