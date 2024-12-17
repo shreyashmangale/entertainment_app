@@ -17,7 +17,7 @@ This is a **Entertainment App - MERN Stack Project** built using the **MERN stac
 - **Add Movies**: Add new movies to the bookmark collection.
 - **Delete Movies**: Remove movies from the bookmark collection.
 - **Backend API**: RESTful API to handle movie CRUD operations.
-- **Authentication**: User login and protected routes (optional).
+- **Authentication**: User login, logout and signup.
 - **Responsive Design**: Works on desktop, tablet, and mobile devices.
 
 ---
