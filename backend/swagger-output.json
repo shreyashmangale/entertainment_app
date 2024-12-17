@@ -5,10 +5,10 @@
     "description": "Capstone Project Module 5",
     "version": "1.0.0"
   },
-  "host": "localhost:5000",
+  "host": "entertainment-app-backend-6jyh.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/search": {

@@ -20,7 +20,7 @@ const doc = {
             cookieAuth: [], // Apply this globally to all endpoints if needed
         },
     ],
-    host: 'http://localhost:5000'
+    host: 'https://entertainment-app-backend-6jyh.onrender.com'
 };
 
 const outputFile = './swagger-output.json';
