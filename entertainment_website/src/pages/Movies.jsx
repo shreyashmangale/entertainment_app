@@ -19,6 +19,8 @@ const Movies = () => {
       {/* <h1 className='text-center text-white text-4xl'>Movies</h1> */}
       <SideNavbar />
 
+
+
       <div className="relative lg:left-32 left-0 lg:top-0 lg:w-[93%] w-full h-[100vh] bg-transparent lg:px-8 px-4">
         <div className="sm:ps-8 py-8">
           <form className='flex flex-row gap-8 items-center'>
@@ -28,7 +30,7 @@ const Movies = () => {
             <i class="fa-solid fa-magnifying-glass fa-2xl" style={{ color: "#ffffff" }} ></i></Link>
 
           </form>
-        </div>
+        </div> 
 
         {/* Trending Movies slide */}
         <div className='sm:ps-6 sm:py-8'>
