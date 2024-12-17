@@ -1,6 +1,6 @@
 # 🎬 Entertainment App - Capstone Project Module 5
 
-This is a **Entertainment App - MERN Stack Project** built using the **MERN stack** (MongoDB, Express.js, React.js, Node.js). It allows users to browse, search, and manage a collection of movies.
+This is a **Entertainment App - MERN Stack Project** built using the **MERN stack** (MongoDB, Express.js, React.js, Node.js). It allows users to browse, search, and manage a collection of movies and shows.
 
 ---
 
