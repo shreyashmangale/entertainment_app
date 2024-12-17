@@ -1,0 +1,19 @@
+const { client } = require("../dbConnection");
+
+
+const getRecommended = async (req, res) => {
+    try {
+        await client.connect();
+        const db = client.db('entertainment_db');  // Select the database
+        const collection = db.collection('trending_recommended');  // Select the collection
+
+        // Insert a single document
+        const result = await collection.find({title: 'Movies you can watch for Free'}).toArray();
+        return res.status(200).json(result);
+        // console.log('Document fetched:', result);
+    } catch(error){
+        throw error;
+    }
+}
+
+module.exports = { getRecommended }
