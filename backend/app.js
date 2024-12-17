@@ -20,20 +20,19 @@ const searchRoute = require('./routes/searchRoute.js')
 const SwaggerUi = require('swagger-ui-express')
 const SwaggerDocument = require('./swagger-output.json');
 
-app.use(cors({
-    origin: 'http://localhost:3000',
-    credentials: true, // Allow credentials (cookies)
-}));
+app.use(cors());
 
 app.use(express.json())
 
-app.use(cookieParser());  // Use cookie-parser middleware
-
-
-
 
 // Serve static files from the React app
-// app.use(express.static(path.join(__dirname, '../entertainment_website/build')));
+app.use(express.static(path.join(__dirname, '../entertainment_website/build')));
+
+//To open frontend
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../entertainment_website/build', 'index.html'));
+})
+
 
 
 app.use('/auth', authRoutes);
