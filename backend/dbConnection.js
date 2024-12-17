@@ -17,7 +17,7 @@ async function connectDB() {
     // Connect the client to the server
     if (!client.isConnected) {
         await client.connect();
-      // console.log("Connected to MongoDB Atlas");
+      console.log("Connected to MongoDB Atlas");
     }
     return client; // Return the connected client
   } catch (error) {
