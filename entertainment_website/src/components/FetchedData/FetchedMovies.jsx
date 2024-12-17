@@ -109,7 +109,7 @@ const FetchedMovies = () => {
                                         </div>
                                         <div>
                                             <Link to={`/movies/${item._id}`}>
-                                                <h2 className='text-xl'>{item.title}</h2>
+                                                <h2 className='sm:text-xl text-sm'>{item.title}</h2>
                                             </Link>
                                         </div>
                                     </div>
