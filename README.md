@@ -4,6 +4,10 @@ This is a **Entertainment App - MERN Stack Project** built using the **MERN stac
 
 ---
 
+## Entertainment App - https://entertainment-app-y0nt.onrender.com
+
+## Entertainment App Backend - https://entertainment-app-backend-6jyh.onrender.com
+
 ## Features
 
 - **Search Movies**: Search for movies by name.
