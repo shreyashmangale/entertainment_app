@@ -1,0 +1,38 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #10141E;
+  overflow-x: hidden;
+}
+
+
+.background{
+  background-image: url('./assets/background_img_home.jpg');
+  background-color: rgba(0, 0, 0, 0.8);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Ensure it stays behind content */
+}
+
+/* Modal background color and shadow */
+.modal {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark gray */
+  color: black; /* White text */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+.modal-content{
+  background-color: #10141E;
+  color: white;
+  border: none;
+  text-align: center;
+}
+
+.modal-button {
+  background-color: rgb(252, 86, 86);
+  border: none;
+}
