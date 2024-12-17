@@ -28,7 +28,7 @@ const Login = () => {
           navigate("/trending");
         }
         catch(err){
-            console.log(err);
+          //console.log(err);
             
           setError(err.response);
         }

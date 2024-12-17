@@ -13,7 +13,7 @@ const SideNavbar = () => {
     const navigate = useNavigate();
 
     const { currentUser, logout } = useContext(AuthContext);
-    console.log(currentUser);
+  //console.log(currentUser);
 
     const location = useLocation();
     const [activeTab, setActiveTab] = useState(location.pathname.split('/')[1]);
@@ -24,7 +24,7 @@ const SideNavbar = () => {
     })
 
     useEffect(() => {
-        console.log(activeTab);
+      //console.log(activeTab);
 
     }, [activeTab])
 

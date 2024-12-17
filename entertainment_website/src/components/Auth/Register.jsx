@@ -26,7 +26,7 @@ const SignUp = () => {
     const handleSubmit = async e => {
         e.preventDefault()
         try{ 
-            console.log(inputs);
+          //console.log(inputs);
             
             await axios.post("http://localhost:5000/auth/register", inputs);
             navigate('/auth/login');

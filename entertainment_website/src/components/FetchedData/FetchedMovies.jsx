@@ -35,7 +35,7 @@ const FetchedMovies = () => {
     //           setMovies(result);
     //         }
     //       } catch (error) {
-    //           console.log(error);
+    //         //console.log(error);
     //       }
     //     };
 
@@ -61,14 +61,14 @@ const FetchedMovies = () => {
                 }
             }, newItem);
             if(response.status === 200) {
-                console.log(response.data);
+              //console.log(response.data);
             }
 
             // Optionally clear form fields after submission
 
         } catch (error) {
             if(error.status === 409){
-                console.log("Already added");
+              //console.log("Already added");
                 
             }
 

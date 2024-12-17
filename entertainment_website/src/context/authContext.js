@@ -10,10 +10,10 @@ export const AuthContextProvider = ({ children }) => {
 
     const login = async (inputs) => {
         const res = await axios.post("http://localhost:5000/auth/login", inputs);
-        console.log(res)
+      //console.log(res)
 
         const token = res.data.token;
-        console.log(token)
+      //console.log(token)
         // Store token
         localStorage.setItem('access_token', token);
 
@@ -21,9 +21,9 @@ export const AuthContextProvider = ({ children }) => {
     };
 
     const logout = async(inputs) => {
-        console.log("In logout")
+      //console.log("In logout")
         const response = await axios.post("http://localhost:5000/auth/logout");
-        console.log("logout response", response)
+      //console.log("logout response", response)
 
         localStorage.removeItem('access_token'); // or sessionStorage.removeItem('authToken');
         setCurrentUser(null);

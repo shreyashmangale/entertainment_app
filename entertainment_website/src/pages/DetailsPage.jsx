@@ -14,9 +14,9 @@ const DetailsPage = () => {
     const location = useLocation();
     
     const category = location.pathname.split('/')[1];
-    console.log(category);
+  //console.log(category);
     const id = location.pathname.split('/')[2];
-    console.log(id);
+  //console.log(id);
     
 
     const [item, setItem] = useState(null);
@@ -28,23 +28,23 @@ const DetailsPage = () => {
     useEffect(()=>{
     const fetchData = async () => {
         const url = category === 'movies' ? `http://localhost:5000/movies/${Number(id)}` : `http://localhost:5000/tvseries/${Number(id)}`;
-        console.log(url);
+      //console.log(url);
         
         try {
         const response = await axios.get(url);
-        console.log(response);
+      //console.log(response);
         
         if (!response) {
             throw new Error('Network response was not ok');
         }
         const result = await response.data;
-        console.log(result);
+      //console.log(result);
         
 
 
         if (result) { // only set data if component is mounted
             if(category === 'movies'){
-                console.log(result);
+              //console.log(result);
                 
                 setItem(result);
                 //setSimilarItems(result.similarMovies);
@@ -57,7 +57,7 @@ const DetailsPage = () => {
             }
         }
         } catch (error) {
-            console.log(error);
+          //console.log(error);
         }
     };
 
@@ -94,14 +94,14 @@ const DetailsPage = () => {
         try {
             const response = await axios.post('http://localhost:5000/bookmarked', newItem);
             if(response.status === 200) {
-                console.log(response.data);
+              //console.log(response.data);
             }
 
             // Optionally clear form fields after submission
 
         } catch (error) {
             if(error.status === 409){
-                console.log("Already added");
+              //console.log("Already added");
                 
             }
 
@@ -120,7 +120,7 @@ const DetailsPage = () => {
     const handleCloseModal = () => setShowModal(false);
 
     // const handleWatchTrailer = (item) => {
-    //     console.log(item);
+    //   //console.log(item);
         
     //     setModal(true);
     //     setLink(item.youtube_trailer)

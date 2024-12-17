@@ -12,7 +12,7 @@ import { AuthContext } from '../context/authContext';
 const Home = () => {
 
   const { currentUser, logout } = useContext(AuthContext);
-  console.log(currentUser);
+//console.log(currentUser);
   
 
   const [searchedName, setSearchedName] = useState('');

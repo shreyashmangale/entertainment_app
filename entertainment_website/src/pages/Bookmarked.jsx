@@ -41,7 +41,7 @@ const Bookmarked = () => {
         }
     })
       const items = await response.data;
-      console.log("items are ", items);
+    //console.log("items are ", items);
       const movies = items.filter(item => item!==null && item.contentType === 'movie');
       const tvseries = items.filter(item => item!==null && item.contentType === 'show');
       setBookmarkedMovies(movies);
@@ -51,7 +51,7 @@ const Bookmarked = () => {
       // Optionally clear form fields after submission
 
     } catch (error) {
-      console.log(error);
+    //console.log(error);
 
     }
   }
@@ -65,7 +65,7 @@ const Bookmarked = () => {
 
   const removeFromBookmarked = async (item_id) => {
     // e.preventDefault();
-    console.log(item_id);
+  //console.log(item_id);
 
     try {
       const card = document.getElementById(`card-${item_id}`);
@@ -83,7 +83,7 @@ const Bookmarked = () => {
               Authorization: `Bearer ${token}`
           }
       });
-        console.log(response)
+      //console.log(response)
 
         const new_bookmarked_movies = bookmarkedMovies.filter(item => item._id != item_id)
         const new_bookmarked_tvseries = bookmarkedTvseries.filter(item => item._id != item_id)
@@ -93,7 +93,7 @@ const Bookmarked = () => {
       card.classList.add('opacity-100', 'scale-100');
 
     } catch (error) {
-      console.log("error deleting item");
+    //console.log("error deleting item");
 
     }
   };
