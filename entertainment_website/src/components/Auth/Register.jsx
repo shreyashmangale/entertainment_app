@@ -28,7 +28,7 @@ const SignUp = () => {
         try{ 
           //console.log(inputs);
             
-            await axios.post("http://localhost:5000/auth/register", inputs);
+            await axios.post("https://entertainment-app-backend-6jyh.onrender.com/auth/register", inputs);
             navigate('/auth/login');
           }
           catch(err){

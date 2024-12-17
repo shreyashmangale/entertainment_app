@@ -27,7 +27,7 @@ const DetailsPage = () => {
 
     useEffect(()=>{
     const fetchData = async () => {
-        const url = category === 'movies' ? `http://localhost:5000/movies/${Number(id)}` : `http://localhost:5000/tvseries/${Number(id)}`;
+        const url = category === 'movies' ? `https://entertainment-app-backend-6jyh.onrender.com/movies/${Number(id)}` : `https://entertainment-app-backend-6jyh.onrender.com/tvseries/${Number(id)}`;
       //console.log(url);
         
         try {
@@ -92,7 +92,7 @@ const DetailsPage = () => {
         // console.log(newItem);
 
         try {
-            const response = await axios.post('http://localhost:5000/bookmarked', newItem);
+            const response = await axios.post('https://entertainment-app-backend-6jyh.onrender.com/bookmarked', newItem);
             if(response.status === 200) {
               //console.log(response.data);
             }

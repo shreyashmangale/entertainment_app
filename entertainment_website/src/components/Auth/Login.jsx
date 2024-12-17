@@ -24,7 +24,7 @@ const Login = () => {
         e.preventDefault()
         try{ 
           await login(inputs);
-          //await axios.post("http://localhost:5000/auth/login", inputs);
+          //await axios.post("https://entertainment-app-backend-6jyh.onrender.com/auth/login", inputs);
           navigate("/trending");
         }
         catch(err){

@@ -13,14 +13,14 @@ const FetchedTvseries = () => {
   const [showModal, setShowModal] = useState(false);
 
 
-  const response = useFetch('http://localhost:5000/tvseries', { method: 'GET' });
+  const response = useFetch('https://entertainment-app-backend-6jyh.onrender.com/tvseries', { method: 'GET' });
   //console.log('The server responded with: ' + response);
 
 
   //   useEffect(()=>{
   //     const fetchData = async () => {
   //       try {
-  //         const response = await fetch('http://localhost:5000/tvseries');
+  //         const response = await fetch('https://entertainment-app-backend-6jyh.onrender.com/tvseries');
   //         if (!response.ok) {
   //           throw new Error('Network response was not ok');
   //         }
@@ -52,7 +52,7 @@ const FetchedTvseries = () => {
     try {
       const token = localStorage.getItem('access_token');
 
-      const response = await axios.post('http://localhost:5000/bookmarked', newItem,{
+      const response = await axios.post('https://entertainment-app-backend-6jyh.onrender.com/bookmarked', newItem,{
         headers: {
             Authorization: `Bearer ${token}`
         }

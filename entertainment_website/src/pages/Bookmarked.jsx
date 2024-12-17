@@ -25,7 +25,7 @@ const Bookmarked = () => {
 
   async function fetchData() {
     try {
-      // const response = await fetch('http://localhost:5000/bookmarked', {
+      // const response = await fetch('https://entertainment-app-backend-6jyh.onrender.com/bookmarked', {
       //   method: 'GET',
       //   headers: {
       //     'Authorization': `Bearer ${token}`,
@@ -35,7 +35,7 @@ const Bookmarked = () => {
       const token = localStorage.getItem('access_token');
 
 
-      const response = await axios.get('http://localhost:5000/bookmarked', {
+      const response = await axios.get('https://entertainment-app-backend-6jyh.onrender.com/bookmarked', {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -78,7 +78,7 @@ const Bookmarked = () => {
 
       // Wait for the transition to finish, then remove the element
       setTimeout(async() => {
-        const response = await axios.delete(`http://localhost:5000/bookmarked/${item_id}`, {
+        const response = await axios.delete(`https://entertainment-app-backend-6jyh.onrender.com/bookmarked/${item_id}`, {
           headers: {
               Authorization: `Bearer ${token}`
           }

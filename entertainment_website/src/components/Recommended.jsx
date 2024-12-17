@@ -18,7 +18,7 @@ const Recommended = () => {
 
     async function getRecommended() {
         try {
-            const response = await axios.get('http://localhost:5000/recommended');
+            const response = await axios.get('https://entertainment-app-backend-6jyh.onrender.com/recommended');
             const items = await response;
             //console.log(items.data[0].movies);
 
@@ -48,7 +48,7 @@ const Recommended = () => {
         try {
             const token = localStorage.getItem('access_token');
 
-            const response = await axios.post('http://localhost:5000/bookmarked', newItem,{
+            const response = await axios.post('https://entertainment-app-backend-6jyh.onrender.com/bookmarked', newItem,{
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

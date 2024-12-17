@@ -9,7 +9,7 @@ export const AuthContextProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("user")) || null)
 
     const login = async (inputs) => {
-        const res = await axios.post("http://localhost:5000/auth/login", inputs);
+        const res = await axios.post("https://entertainment-app-backend-6jyh.onrender.com/auth/login", inputs);
       //console.log(res)
 
         const token = res.data.token;
@@ -22,7 +22,7 @@ export const AuthContextProvider = ({ children }) => {
 
     const logout = async(inputs) => {
       //console.log("In logout")
-        const response = await axios.post("http://localhost:5000/auth/logout");
+        const response = await axios.post("https://entertainment-app-backend-6jyh.onrender.com/auth/logout");
       //console.log("logout response", response)
 
         localStorage.removeItem('access_token'); // or sessionStorage.removeItem('authToken');

@@ -16,14 +16,14 @@ const FetchedMovies = () => {
 
     // const [movies, setMovies] = useState([]);
     //console.log(movies);
-    const response = useFetch('http://localhost:5000/movies', { method: 'GET' });
+    const response = useFetch('https://entertainment-app-backend-6jyh.onrender.com/movies', { method: 'GET' });
     //console.log('The server responded with: ' + response);
     // setMovies(response)
 
     //   useEffect(()=>{
     //     const fetchData = async () => {
     //       try {
-    //         const response = await fetch('http://localhost:5000/movies');
+    //         const response = await fetch('https://entertainment-app-backend-6jyh.onrender.com/movies');
     //         if (!response.ok) {
     //           throw new Error('Network response was not ok');
     //         }
@@ -55,7 +55,7 @@ const FetchedMovies = () => {
         try {
             const token = localStorage.getItem('access_token');
 
-            const response = await axios.post('http://localhost:5000/bookmarked', {
+            const response = await axios.post('https://entertainment-app-backend-6jyh.onrender.com/bookmarked', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
