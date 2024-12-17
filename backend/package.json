@@ -6,7 +6,6 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon index.js",
-    "build-frontend": "cd ../entertainment_website && npm install && npm run build",
     "generateDoc": "node swagger.js"
   },
   "author": "",
@@ -22,7 +21,6 @@
     "mongodb": "^6.10.0",
     "mongoose": "^8.8.0",
     "nodemon": "^3.1.7",
-    "path": "^0.12.7",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {

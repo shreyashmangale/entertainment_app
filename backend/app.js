@@ -2,12 +2,6 @@ const express = require('express')
 const cors = require('cors');
 const app = express();
 const dotenv = require('dotenv').config();
-const path = require('path');
-const cookieParser = require('cookie-parser');
-
-
-// MongoDB client
-const client = require('./dbConnection.js')
 
 const moviesRoute = require('./routes/moviesRoute.js')
 const tvseriesRoute = require('./routes/tvseriesRoute.js')
@@ -25,12 +19,10 @@ app.use(cors());
 app.use(express.json())
 
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, '../entertainment_website/build')));
 
-//To open frontend
+//Homepage
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../entertainment_website/build', 'index.html'));
+    res.status(200).json("Entertainment App Backend");
 })
 
 
